@@ -2,3 +2,5 @@
 -- npm install <package name>@<version> --save , --save will put entrly into package.json file in dependencies object,
 -- npm install , it will look into .json file and install all the depndencies listed into depndencies object
 -- node server.js, it will up the server what we are using into server.js file 
+
+# babeljs.io/repl , online tranpiler 'Source-to-source compiler', Babelvconverts Ecs6 into ecs5 for browser compatability
