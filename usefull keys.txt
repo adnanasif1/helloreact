@@ -4,3 +4,13 @@
 -- node server.js, it will up the server what we are using into server.js file 
 
 # babeljs.io/repl , online tranpiler 'Source-to-source compiler', Babelvconverts Ecs6 into ecs5 for browser compatability
+
+
+04-06-2018 revesion from start to 'components And props'
+# elements are what to render on the dom
+# types of components 1= functional 2=class  
+# pure and impure functions
+
+### State and life cycle #####
+
+

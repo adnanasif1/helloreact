@@ -46,6 +46,7 @@
 
 // ========================Components and Props=======================================
 
+/*
 function Welcome(props){
 	return <h2>And The name is {props.salution +' '+ props.name}</h2>;
 }
@@ -63,3 +64,58 @@ function App(props){
 const element = <App salution='Mr' />;
 
 ReactDOM.render(element,document.getElementById('app'));
+*/
+
+// ======================== State and Lifecycle =======================================
+// encapsulated clock example using functional component
+
+/*
+function Clock(props){
+	return (
+		<div>
+			<div>Hello World!</div>
+			<div>And the time is {props.date.toLocaleTimeString()}</div>
+		</div>
+	);
+}
+
+function Tick(props){
+	ReactDOM.render(<Clock date={new Date()} />, document.getElementById('app'));
+}
+
+setInterval(Tick, 1000);
+*/
+
+// encapsulated clock example using Class component , And state
+
+class Clock extends React.Component {
+	constructor(props){
+		super(props);
+		this.state = {date: new Date()};
+	}
+
+	// ## Life Cycle hooks
+	//mounting
+  	componentDidMount() {
+    	this.timerID = setInterval(() => this.tick(), 1000);
+  	}
+	//un-mounting
+  	componentWillUnmount() {
+		clearInterval(this.timerID);
+  	}	
+
+	render(){
+		return (
+			<div>
+				<div>Hello, World!</div>
+				<div>And the time is {this.state.date.toLocaleTimeString()}.</div>
+			</div>
+		);
+	}
+
+	tick(){
+		this.setState( {date: new Date()} );
+	}
+}
+
+ReactDOM.render(<Clock />, document.getElementById('app'));
